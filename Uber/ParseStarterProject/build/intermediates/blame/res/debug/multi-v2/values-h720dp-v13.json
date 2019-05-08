@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/asylbekovbatyrzhan/AndroidStudioProjects/Uber/ParseStarterProject/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/asylbekovbatyrzhan/.gradle/caches/transforms-2/files-2.1/d4259231a1232d4eda31bc4f66019994/res/values-h720dp/values-h720dp.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "294",
+                        "endColumns": "66",
+                        "endOffsets": "356"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}
