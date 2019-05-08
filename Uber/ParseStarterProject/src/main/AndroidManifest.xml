@@ -54,14 +54,14 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".YourLocation"
+            android:name=".DriverLocationActivity"
             android:label="@string/title_activity_your_location" />
         <activity
             android:name=".ViewRequests"
             android:label="@string/title_activity_view_requests"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ViewRiderLocation"
+            android:name=".RiderActivity"
             android:label="@string/title_activity_view_rider_location"></activity>
     </application>
 

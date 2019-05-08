@@ -1,8 +1,5 @@
 package com.parse.starter;
 
-// This is the Activity for DRIVERS!!
-// This activity allows drivers to see a listview showing the closest rides
-// Drivers can click on the listview to see an individual ride which will take them to the ViewRiderLocation Activity
 
 import android.content.Context;
 import android.content.Intent;
@@ -51,36 +48,34 @@ public class ViewRequests extends AppCompatActivity implements LocationListener 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Set up a location manager for the drivers location
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         provider = locationManager.getBestProvider(new Criteria(), false);
         locationManager.requestLocationUpdates(provider, 400, 1, this);
         location = locationManager.getLastKnownLocation(provider);
 
-        //If we find a location, update it!
+
         if ( location != null){
             updateLocation();
         }
 
-        //Creating our ArrayLists to pass through to the ViewRiderLocation
+
         listView = (ListView) findViewById(R.id.listView);
         listViewContent = new ArrayList<String>();
         usernames = new ArrayList<String>();
         latitudes = new ArrayList<Double>();
         longitudes = new ArrayList<Double>();
 
-        //Placeholder text until we have found requests
+
         listViewContent.add("Find nearby requests...");
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listViewContent);
         listView.setAdapter(arrayAdapter);
 
-        //Our onItemClickListener determines which listview item was clicked, then passes the pertinent information through.
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent i = new Intent(getApplicationContext(), ViewRiderLocation.class);
+                Intent i = new Intent(getApplicationContext(), RiderActivity.class);
                 i.putExtra("username", usernames.get(position));
                 i.putExtra("latitude", latitudes.get(position));
                 i.putExtra("longitude", longitudes.get(position));
@@ -128,13 +123,11 @@ public class ViewRequests extends AppCompatActivity implements LocationListener 
             }
         });
     }
-    //restart the location updates on phone wake
     @Override
     protected void onResume() {
         super.onResume();
         locationManager.requestLocationUpdates(provider, 400, 1, this);
     }
-    //save battery on phone sleep
     @Override
     protected void onPause() {
         super.onPause();

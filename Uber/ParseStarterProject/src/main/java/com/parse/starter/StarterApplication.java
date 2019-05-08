@@ -8,8 +8,6 @@
  */
 package com.parse.starter;
 
-//This is our Parse Activity which includes the code necessary for parse to run. Update the
-//application ID and Server to run the code on your own parse server.
 
 import android.app.Application;
 import android.util.Log;
@@ -28,10 +26,8 @@ public class StarterApplication extends Application {
   public void onCreate() {
     super.onCreate();
 
-    // Enable Local Datastore.
     Parse.enableLocalDatastore(this);
 
-    // Add your initialization code here
     Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
                     .applicationId("c043eb5cb6060094357a0e9bbc0b7b5adbd05954")
                     .clientKey("b8967d640bbadab48c28bfff1d3a7f957b4be8c0")
@@ -40,11 +36,9 @@ public class StarterApplication extends Application {
     );
 
 
-    //enable our AutomaticUser
     ParseUser.enableAutomaticUser();
     ParseACL defaultACL = new ParseACL();
-    // Optionally enable public read access.
-    // defaultACL.setPublicReadAccess(true);
+
     ParseACL.setDefaultACL(defaultACL, true);
   }
 }
