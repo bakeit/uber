@@ -1,0 +1,2 @@
+# Referenced at /Users/asylbekovbatyrzhan/AndroidStudioProjects/Instagram/ParseStarterProject/build/intermediates/merged_manifests/debug/AndroidManifest.xml:37
+-keep class com.parse.starter.StarterApplication { <init>(); }
